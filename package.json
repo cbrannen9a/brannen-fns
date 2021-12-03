@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@netlify/functions": "^0.10.0",
+    "@sendgrid/mail": "^7.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.11"
+  }
+}
