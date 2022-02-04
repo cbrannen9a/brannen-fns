@@ -5,15 +5,15 @@ const { ADMIN_EMAIL } = process.env;
 
 const handler: Handler = async (event, context) => {
   const html = `
-  <h4>[DEPLOY FAILED] Crowkeld Sanity</h4>
-  <p>Failed to deploy to Crowkeld Sanity ${new Date()}</p>
-  <p>https://app.netlify.com/sites/crowkeld-sanity/overview</p>
-  `;
+    <h4>[DEPLOY SUCCESS] Brannen Fns</h4>
+    <p>Successful deploy to Brannen Fns ${new Date()}</p>
+    <p>https://app.netlify.com/sites/peaceful-lumiere-aaf09a/overview</p>
+    `;
 
   const mail = {
     to: ADMIN_EMAIL,
     from: "no-reply@netlify.com",
-    subject: `[Deploy Failed] Crowkeld Sanity`,
+    subject: `[Deploy Success] Brannen Fns`,
     html,
   };
 

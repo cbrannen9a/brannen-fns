@@ -7,7 +7,7 @@ const handler: Handler = async (event, context) => {
   const html = `
     <h4>[DEPLOY SUCCESS] Crowkeld Sanity</h4>
     <p>Successful deploy to Crowkeld Sanity ${new Date()}</p>
-    <p>https://crowkeld.sanity.studio/dashboard</p>
+    <p>https://app.netlify.com/sites/crowkeld-sanity/overview</p>
     `;
 
   const mail = {
