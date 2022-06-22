@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "yarn start",
+    "start": "netlify dev"
+  },
   "dependencies": {
     "@netlify/functions": "^0.10.0",
     "@sendgrid/mail": "^7.6.0"
