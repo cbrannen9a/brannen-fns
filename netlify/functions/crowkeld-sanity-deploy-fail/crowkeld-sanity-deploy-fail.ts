@@ -1,21 +1,11 @@
 import { Handler } from "@netlify/functions";
-import sendMail from "../send-email/send-email";
-
-const { ADMIN_EMAIL, SENDER_EMAIL } = process.env;
+import sendMail, { getMailData } from "../send-email/send-email";
 
 const handler: Handler = async (event, context) => {
-  const html = `
-  <h4>[DEPLOY FAILED] Crowkeld Sanity</h4>
-  <p>Failed to deploy to Crowkeld Sanity ${new Date()}</p>
-  <p>https://app.netlify.com/sites/crowkeld-sanity/overview</p>
-  `;
-
-  const mail = {
-    to: ADMIN_EMAIL,
-    from: SENDER_EMAIL || "",
-    subject: `[Deploy Failed] Crowkeld Sanity`,
-    html,
-  };
+  const mail = getMailData("error", {
+    name: "Crowkeld Sanity",
+    url: "https://app.netlify.com/sites/crowkeld-sanity/overview",
+  });
 
   try {
     await sendMail(mail);
