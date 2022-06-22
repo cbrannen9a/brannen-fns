@@ -1,7 +1,7 @@
 import { Handler } from "@netlify/functions";
 import sendMail from "../send-email/send-email";
 
-const { ADMIN_EMAIL } = process.env;
+const { ADMIN_EMAIL, SENDER_EMAIL } = process.env;
 
 const handler: Handler = async (event, context) => {
   const html = `
@@ -12,7 +12,7 @@ const handler: Handler = async (event, context) => {
 
   const mail = {
     to: ADMIN_EMAIL,
-    from: "no-reply@netlify.com",
+    from: SENDER_EMAIL || "",
     subject: `[Deploy Success] Brannen Fns`,
     html,
   };
